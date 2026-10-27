@@ -23,6 +23,7 @@
                 <a href="#" id="btn_panier">
                     Panier 
                     <span><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span id="nb_articles" class="hide">0</span>
                 </a>
             </div>
         </div>
@@ -36,10 +37,66 @@
         <!-- SECTION CARROUSEL -->
         <section id="carrousel">
         </section>
+
+
+        <!-- SECTION BOUTIQUE -->
+        <section id="boutique">
+            <div class="boutique_entete">
+                <h2>Nos produits du Marché</h2>
+                <p id="nb_resultats"></p>
+            </div>
+
+            <!-- Filtre de recherche de produits -->
+            <div class="boutique_outils">
+                <div class="recherche">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="recherche" placeholder="Rechercher : poivre blanc, poulet ...." />
+                </div>
+
+                <select id="tri">
+                    <option value="defaut">
+                        Trier par : recommandés
+                    </option>
+                    <option value="prix_croissant">
+                        Prix croissant
+                    </option>
+                    <option value="prix_decroissant">
+                        Prix décroissant
+                    </option>
+                    <option value="nom">
+                        Nom (A -> Z)
+                    </option>
+                </select>
+            </div>
+
+            <!-- Liste des categories -->
+            <div id="categories"></div>
+
+            <!-- Liste des produits -->
+            <div id="produits"></div>
+        </section>
     </main>
+
+
+
+
+
+    <!-- PIED DE PAGE -->
+    <footer id="pied">
+        <p>
+            <b>Mboa<span>Market</span></b>
+            Le goût de ça, livré chez vous.
+        </p>
+        <p>
+            Tél : 693 90 91 21 | Email : mboa@iuc.com
+        </p>
+    </footer>
+
+
 
     <!-- Gestion du JavaScript -->
     <script type="text/javascript" src="js/carrousel.js"></script>
+    <script type="text/javascript" src="js/boutique.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

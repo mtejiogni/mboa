@@ -69,3 +69,75 @@ const slide_right= document.querySelector("#carrousel .slide_right");
 
 // contient l'indice du slide actuellement affiché
 let slide_courant= 0;
+
+
+
+
+/*
+===================================
+MASQUER TOUS LES SLIDES SAUF LE PREMIER
+====================================
+*/
+for(let i= 1; i< slides.length; i++) {
+    slides[i].classList.add('hide');
+}
+
+
+
+/*
+===================================
+QUELQUES FONCTIONS UTILES
+====================================
+*/
+// Fonction permettant d'afficher un slide
+function showSlide(index, direction) {
+    //On masque le slide courant
+    slides[slide_courant].classList.add('hide');
+
+    // On cherche l'indice du nouveau slide a afficher
+    if(direction.trim().toLowerCase() == "right") {
+        if(index >= slides.length) {
+            slide_courant= 0;
+        }
+        else {
+            slide_courant= index;
+        }
+    }
+    else if(direction.trim().toLowerCase() == "left") {
+        if(index < 0) {
+            slide_courant= slides.length - 1;
+        }
+        else {
+            slide_courant= index;
+        }
+    }
+
+    // On affiche le slide courant
+    slides[slide_courant].classList.remove('hide');
+}
+
+
+
+/*
+===================================
+LANCER LE SLIDE
+====================================
+*/
+slide_left.addEventListener("click", function(e) {
+    showSlide(slide_courant - 1, "left");
+});
+
+slide_right.addEventListener("click", function(e) {
+    showSlide(slide_courant + 1, "right");
+});
+
+
+
+/*
+===================================
+LANCER LE SLIDE AUTOMARTIQUEMENT
+====================================
+*/
+setInterval(function() {
+    showSlide(slide_courant + 1, "right");
+}, 5000);
