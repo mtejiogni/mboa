@@ -94,6 +94,80 @@
 
 
 
+
+
+    <!-- FENETRE MODAL PANIER -->
+    <div id="modal_commande" class="hide">
+        <div class="modal_container">
+            <span id="modal_fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+
+            <form id="modal_form" method="POST" action="#">
+                <fieldset class="commande_info">
+                    <legend>Finaliser ma Commande</legend>
+
+                    <div class="champ">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" name="nom" placeholder="Ex: M. TEJIOGNI" required />
+                    </div>
+
+                    <div class="champ">
+                        <label for="telephone">Téléphone Mobile</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Ex: 6XXXXXXXX" required />
+                    </div>
+
+                    <div class="champ">
+                        <label for="ville">Ville de livraison</label>
+                        <select id="ville" name="ville">
+                            <option value="DOUALA">DOUALA</option>
+                            <option value="YAOUNDE">YAOUNDE</option>
+                        </select>
+                    </div>
+
+                    <div class="champ">
+                        <label for="paiement">Moyen de paiement</label>
+                        <select id="paiement" name="paiement">
+                            <option value="Orange Money">Orange Money</option>
+                            <option value="MTN Mobile Money">MTN Mobile Money</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset class="commande_produit">
+                    <legend>Récapitulatif de la commande</legend>
+
+                    <table border="0" cellpadding="4" cellspacing="8">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>PU (FCFA)</th>
+                                <th>QTE</th>
+                                <th>MONTANT (FCFA)</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody id="liste_produits">
+                        </tbody>
+                    </table>
+
+                    <div id="total_commande"></div>
+
+                    <div class="submit">
+                        <input type="submit" id="btn_valider" value="Valider la commande" />
+                    </div>
+                </fieldset>
+            </form>
+
+
+            <div id="confirmation" class="hide"></div>
+        </div>
+    </div>
+
+
+
+
+
     <!-- Gestion du JavaScript -->
     <script type="text/javascript" src="js/carrousel.js"></script>
     <script type="text/javascript" src="js/boutique.js"></script>
